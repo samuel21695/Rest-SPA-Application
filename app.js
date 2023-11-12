@@ -21,3 +21,6 @@ fetch(apiUrl, {
   // 데이터 활용
   console.log(data);
 })
+.catch(error => {
+  console.error("Error:", error);
+});
