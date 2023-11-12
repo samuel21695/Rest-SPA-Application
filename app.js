@@ -17,3 +17,7 @@ fetch(apiUrl, {
   // JSON 형식의 데이터 추출
   return response.json();
 })
+.then(data => {
+  // 데이터 활용
+  console.log(data);
+})
