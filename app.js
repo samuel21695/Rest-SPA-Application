@@ -9,3 +9,11 @@ fetch(apiUrl, {
     "Content-Type": "application/json",
   },
 })
+.then(response => {
+  // HTTP 상태 코드 확인
+  if (!response.ok) {
+    throw new Error(`HTTP error! Status: ${response.status}`);
+  }
+  // JSON 형식의 데이터 추출
+  return response.json();
+})
