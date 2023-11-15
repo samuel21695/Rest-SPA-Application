@@ -10,15 +10,27 @@
   <script>
     const root = document.getElementById('root');
     const xhr = new XMLHttpRequest();
-    const _URL = "https://apis.data.go.kr/6300000/openapi2022/tourspot/gettourspot?serviceKey=jdJ4n%2BmtGnAwWjjroAWSRUmiCdIIIhT7KKsWAJ7Y0YCkPON4QyGZueSv41KqWkC9qn3p2pFqaOSYkezbhnWTBQ%3D%3D&pageNo=1&numOfRows=10";
+    const _URL = "https://apis.data.go.kr/6300000/openapi2022/tourspot/gettourspot?serviceKey=jdJ4n%2BmtGnAwWjjroAWSRUmiCdIIIhT7KKsWAJ7Y0YCkPON4QyGZueSv41KqWkC9qn3p2pFqaOSYkezbhnWTBQ%3D%3D&pageNo=1&numOfRows=1000";
     xhr.open('GET', _URL);
     xhr.send();
     xhr.addEventListener('load', () => {
       const _tourData = JSON.parse(xhr.response);
       console.log("처음보는 응답이 무엇인지 조회해보기 :", _tourData)
-      const h1 = document.createElement('h1');
-      h1.textContent = _tourData.response.body.items[0].tourspotNm;
-      root.appendChild(h1);
+
+      const _tourDataItems = _tourData.response.body.items
+      console.log(_tourDataItems.length);
+
+      function createH1(text) {
+        const li = document.createElement('li');
+        li.textContent = text;
+        return li;
+      }
+
+      for (i = 0; i < _tourDataItems.length; i++) {
+        let liText = _tourDataItems[i].tourspotNm
+        let li = createH1(liText);
+        root.appendChild(li);
+      }
     })
   </script>
 </body>
