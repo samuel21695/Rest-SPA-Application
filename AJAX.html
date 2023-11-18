@@ -10,7 +10,7 @@
   <script>
     const root = document.getElementById('root');
     const xhr = new XMLHttpRequest();
-    const _URL = "https://apis.data.go.kr/6300000/openapi2022/tourspot/gettourspot?serviceKey=jdJ4n%2BmtGnAwWjjroAWSRUmiCdIIIhT7KKsWAJ7Y0YCkPON4QyGZueSv41KqWkC9qn3p2pFqaOSYkezbhnWTBQ%3D%3D&pageNo=1&numOfRows=1000";
+    const _URL = "https://apis.data.go.kr/6300000/openapi2022/tourspot/gettourspot?serviceKey=jdJ4n%2BmtGnAwWjjroAWSRUmiCdIIIhT7KKsWAJ7Y0YCkPON4QyGZueSv41KqWkC9qn3p2pFqaOSYkezbhnWTBQ%3D%3D&pageNo=1&numOfRows=10";
     xhr.open('GET', _URL);
     xhr.send();
     xhr.addEventListener('load', () => {
@@ -27,7 +27,7 @@
       }
 
       for (i = 0; i < _tourDataItems.length; i++) {
-        let liText = _tourDataItems[i].tourspotNm
+        let liText = JSON.stringify(_tourDataItems[i]);
         let li = createH1(liText);
         root.appendChild(li);
       }
