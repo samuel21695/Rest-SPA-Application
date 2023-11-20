@@ -7,6 +7,23 @@
 #root{
   width: 100vw; 
   height: 100vh;
-  background-color: #FFF5E5;}
+  background-color: #FFF5E5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  
+/* block size */
+.w-30vw{width:30vw;}
+.w-70vw{width:70vw;}
+.h-15vh{height:15vh;}
+.h-60vh{height:60vh;}
+.border-rad-20px{border-radius: 20px;}
+
+
+/* color */
+.bgc-w{background-color: white;}
+.bgc-g{background-color: grey;}
+
+/* positon && display */
+.flex-wrap{flex-wrap: wrap;}
