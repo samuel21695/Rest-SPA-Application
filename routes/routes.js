@@ -4,7 +4,7 @@ const path = require('path');
 const app = express()
 const router = express.Router();
 
-router.use(express.static(path.join(__dirname, '..', 'static')));
+router.use('/static', express.static(path.join(__dirname, '..', 'static')));
 
 // route setting
 router.get('/', (req, res) => {
