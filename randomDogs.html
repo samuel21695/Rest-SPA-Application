@@ -7,7 +7,9 @@
 </head>
 <body>
   <div id="root"></div>
+  <div id="root2"></div>
   <script>
+    // xhr형식으로 데이터 가져오기
     const root = document.getElementById('root');
     const xhr = new XMLHttpRequest();
     const _URL = "https://dog.ceo/api/breeds/image/random";
@@ -19,6 +21,24 @@
       root.innerHTML = `<img src= ${_randomDog}>`
       console.log("처음보는 응답이 무엇인지 조회해보기 :", _randomDog)
     })
+    
+    // fetch 형식으로 데이터 가져오기
+    const getRandomDogImage = () => {
+    const _URL = "https://dog.ceo/api/breeds/image/random";
+    fetch(_URL)
+      .then(response => response.json())
+      .then(data => {
+        const _randomDog = data.message;
+      const root2 = document.getElementById('root2');
+      root2.innerHTML = `<img src="${_randomDog}">`;
+      console.log('Random dog image URL:', _randomDog);
+    })
+    .catch(error => {
+      console.error(error);
+      });
+    };
+
+getRandomDogImage();
   </script>
 </body>
 </html>
