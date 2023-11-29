@@ -1,11 +1,17 @@
 const express = require('express');
-const routes = require('./routes/routes.js');
+const path = require('path');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
-app.use('/', routes);
+// 정적 파일 제공
+app.use(express.static(path.join(__dirname, 'static')));
+
+// 모든 요청에 대해 index.html 제공
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'static', 'index.html'));
+});
 
 app.listen(port, () => {
-  console.log(`서버가 http://localhost:${port} 에서 실행 중 입니다.`)
+    console.log(`http://localhost:${port}`);
 });
