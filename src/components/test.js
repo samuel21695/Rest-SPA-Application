@@ -1,27 +1,16 @@
-import React, { useState } from "react";
-
-let _randomDog = ""
-
-function RandomAnimalImage() {
-  const _URL = "https://dog.ceo/api/breeds/image/random";
-  fetch(_URL)
-    .then(response => response.json())
-    .then(data => {
-      _randomDog = data.message;
-      return(
-        <img src={_randomDog}></img>
-      )
-    })
-}
+import React, { useEffect, useState } from "react";
 
 function TestImg() {
   const _URL = "https://dog.ceo/api/breeds/image/random";
   const [_randomDog, setRandomDog] = useState("");
-  fetch(_URL)
-    .then(response => response.json())
-    .then(data => {
-      setRandomDog(data.message);
-    })
+
+  useEffect(() => {
+    fetch(_URL)
+      .then(response => response.json())
+      .then(data => {
+        setRandomDog(data.message);
+      });
+  }, []);
     
     return(
       <img src={_randomDog} className="w"></img>
