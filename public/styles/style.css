@@ -7,7 +7,7 @@
 #root{
   width: 100vw; 
   height: 100vh;
-  background-color: #FFF5E5;
+  background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,11 +36,14 @@
 
 /* positon && display */
 .display-f{display: flex;}
+.flex-column{flex-direction: column;}
 .flex-wrap{flex-wrap: wrap;}
 .align-center{align-items: center;}
+.align-around{align-content: space-around;}
 .justify-center{justify-content: center;}
 .justify-around{justify-content: space-around;}
 .list-inside {list-style-position: inside;}
+.border{border: 2px solid black;}
 
 /* fonts */
 .fs-4em {font-size: 4em;}
