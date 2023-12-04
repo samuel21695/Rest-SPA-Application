@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 let _randomDog = ""
 
@@ -15,9 +15,17 @@ function RandomAnimalImage() {
 }
 
 function TestImg() {
-  return(
-    <img src="https://lh3.googleusercontent.com/ogw/AKPQZvx2x5nuxgoQ9nFa6HEE02zohl5PVaiPVukhax7r=s64-c-mo" className="w"></img>
-  )
+  const _URL = "https://dog.ceo/api/breeds/image/random";
+  const [_randomDog, setRandomDog] = useState("");
+  fetch(_URL)
+    .then(response => response.json())
+    .then(data => {
+      setRandomDog(data.message);
+    })
+    
+    return(
+      <img src={_randomDog} className="w"></img>
+    )      
 }
 
 function Body2() { 
