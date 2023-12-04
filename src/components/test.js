@@ -1,5 +1,20 @@
 import React from "react";
 
+let _randomDog = ""
+
+function RandomAnimalImage() {
+  const _URL = "https://dog.ceo/api/breeds/image/random";
+  fetch(_URL)
+    .then(response => response.json())
+    .then(data => {
+      _randomDog = data.message;
+      return(
+        <img src={_randomDog}></img>
+      )
+    })
+}
+RandomAnimalImage()
+
 function Body2() { 
   return (
     <div className="w-70vw h-60vh display-f align-center justify-center">
@@ -8,7 +23,7 @@ function Body2() {
         <div className="w-50vw h-50vh bgc-w border-rad-20px">
           <div className="w-50vw h-25vh display-f">
             <div className="w-25vw h-25vh display-f align-center justify-center">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrApAJLpB0df7y6vzfsrZ8TSdHWJ9PrNzo2Q&usqp=CAU" className="w"></img>
+              < RandomAnimalImage/>
             </div>
             <ul className="w-25vw h-25vh list-inside">
               <li></li>
