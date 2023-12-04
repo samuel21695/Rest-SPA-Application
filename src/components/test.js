@@ -13,7 +13,12 @@ function RandomAnimalImage() {
       )
     })
 }
-RandomAnimalImage()
+
+function TestImg() {
+  return(
+    <img src="https://lh3.googleusercontent.com/ogw/AKPQZvx2x5nuxgoQ9nFa6HEE02zohl5PVaiPVukhax7r=s64-c-mo" className="w"></img>
+  )
+}
 
 function Body2() { 
   return (
@@ -23,7 +28,7 @@ function Body2() {
         <div className="w-50vw h-50vh bgc-w border-rad-20px">
           <div className="w-50vw h-25vh display-f">
             <div className="w-25vw h-25vh display-f align-center justify-center">
-              < RandomAnimalImage/>
+              < TestImg/>
             </div>
             <ul className="w-25vw h-25vh list-inside">
               <li></li>
