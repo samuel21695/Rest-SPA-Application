@@ -18,23 +18,16 @@ function RandomDogImage() {
 }
 
 function Body2() { 
-  const [reload, setReload] = useState(false);
 
-  const handleNextPageClick = () => {
-    // useEffect를 트리거학 위해 reload를 true로 설정
-    setReload(true);
-  };
-
-  useEffect(() => {
-    // useEffect 트리거 후 reload를 false로 설정
-    if (reload) {
-      setReload(false);
-    }
-  }, [reload]);
+  function handleBack() {
+    // 초기 화면으로 돌아가는 코드 추가
+    // 예: location.reload(); 또는 contentContainer.innerHTML = '초기화면의 HTML 코드';
+    location.reload(); // 페이지 새로고침을 통해 초기 상태로 돌아가는 예시
+  }
 
   return (
     <div className="w-70vw h-60vh display-f align-center justify-center">
-      <div className="fs-4em">‹</div>
+      <div className="fs-4em cursor">‹</div>
       <div>
         <div className="w-30vw h-50vh bgc-w border border-rad-20px m-5vw display-f flex-column align-center">
           <div className="w-30vw h-25vh display-f ">
@@ -58,7 +51,7 @@ function Body2() {
           </div>
         </div>
       </div>
-      <div id="next-page" className="fs-4em" onClick={handleNextPageClick}>›</div>
+      <div id="next-page" className="fs-4em cursor" onClick={handleBack}>›</div>
     </div>
   );
 }
