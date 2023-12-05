@@ -14,6 +14,7 @@
 
 /* block size */
 .w {width: 10rem; height: 10rem;}
+.w-10vw{width:10vw;}
 .w-15vw{width:15vw}
 .w-20vw{width:20vw;}
 .w-25vw{width:25vw;}
@@ -21,6 +22,7 @@
 .w-34vw{width:34vw;}
 .w-50vw{width:50vw;}
 .w-70vw{width:70vw;}
+.h-5vh{height:5vh;}
 .h-10vh{height:10vh;}
 .h-18vh{height:18vh;}
 .h-25vh{height:25vh;}

@@ -18,6 +18,20 @@ function RandomDogImage() {
 }
 
 function Body2() { 
+  const [reload, setReload] = useState(false);
+
+  const handleNextPageClick = () => {
+    // useEffect를 트리거학 위해 reload를 true로 설정
+    setReload(true);
+  };
+
+  useEffect(() => {
+    // useEffect 트리거 후 reload를 false로 설정
+    if (reload) {
+      setReload(false);
+    }
+  }, [reload]);
+
   return (
     <div className="w-70vw h-60vh display-f align-center justify-center">
       <div className="fs-4em">‹</div>
@@ -35,14 +49,16 @@ function Body2() {
               <li>Gender: </li>
             </ul>
           </div>
-          <div className="w-25vw h-10vh text-center"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta provident accusantium quos est natus fugiat dolor nobis minus iusto facilis, sed iure rerum doloribus corporis, tempora unde, eius velit aut.</div>
-          <div className="w-25vw h-10vh">
-            <a rel="http://example.com">link</a>
-            <button></button>
+          <div className="w-25vw h-10vh text-center"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta provident accusantium quos est natus fugiat dolor nobis minus iusto facilis.</div>
+          <div className="w-25vw h-10vh display-f align-center justify-around">
+            <a href="http://example.com">link</a>
+            <button className="w-10vw h-5vh">
+              Adopt Me!
+            </button>
           </div>
         </div>
       </div>
-      <div className="fs-4em">›</div>
+      <div id="next-page" className="fs-4em" onClick={handleNextPageClick}>›</div>
     </div>
   );
 }
