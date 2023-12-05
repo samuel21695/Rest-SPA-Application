@@ -10,11 +10,12 @@
   background-color: white;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
 /* block size */
 .w {width: 10rem; height: 10rem;}
+.w-15vw{width:15vw}
+.w-20vw{width:20vw;}
 .w-25vw{width:25vw;}
 .w-30vw{width:30vw;}
 .w-34vw{width:34vw;}
@@ -25,13 +26,14 @@
 .h-25vh{height:25vh;}
 .h-50vh{height:50vh;}
 .h-60vh{height:60vh;}
+.h-100vh{height:100vh;}
 .border-rad-20px{border-radius: 20px;}
 .m-5vw{margin: 5vw;}
 
 
 /* color */
 .bgc-w{background-color: white;}
-.bgc-g{background-color: grey;}
+.bgc-lightgray{background-color: lightgray;}
 .bgc-D9{background-color: #D9D9D9;}
 .c {background-color: #EFEFEF;}
 
