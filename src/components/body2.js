@@ -26,32 +26,34 @@ function Body2() {
   }
 
   return (
-    <div className="w-70vw h-60vh display-f align-center justify-center">
-      <div className="fs-4em cursor">‹</div>
-      <div>
-        <div className="w-30vw h-50vh bgc-w border border-rad-20px m-5vw display-f flex-column align-center">
-          <div className="w-30vw h-25vh display-f ">
-            <div className="w-30vw h-25vh display-f align-center justify-center">
-              < RandomDogImage/>
+    <div className="w-70vw h-100vh display-f align-center justify-center">
+      <div className="w-70vw h-60vh border display-f">
+        <div className="fs-4em cursor">‹</div>
+        <div>
+          <div className="w-30vw h-50vh bgc-w border border-rad-20px m-5vw display-f flex-column align-center">
+            <div className="w-30vw h-25vh display-f ">
+              <div className="w-30vw h-25vh display-f align-center justify-center">
+                < RandomDogImage/>
+              </div>
+              <ul className="w-25vw h-25vh list-inside display-f flex-column justify-center">
+                <li>Name: </li>
+                <br></br>
+                <li>Age: </li>
+                <br></br>
+                <li>Gender: </li>
+              </ul>
             </div>
-            <ul className="w-25vw h-25vh list-inside display-f flex-column justify-center">
-              <li>Name: </li>
-              <br></br>
-              <li>Age: </li>
-              <br></br>
-              <li>Gender: </li>
-            </ul>
-          </div>
-          <div className="w-25vw h-10vh text-center"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta provident accusantium quos est natus fugiat dolor nobis minus iusto facilis.</div>
-          <div className="w-25vw h-10vh display-f align-center justify-around">
-            <a href="http://example.com">link</a>
-            <button className="w-10vw h-5vh">
-              Adopt Me!
-            </button>
+            <div className="w-25vw h-10vh text-center"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta provident accusantium quos est natus fugiat dolor nobis minus iusto facilis.</div>
+            <div className="w-25vw h-10vh display-f align-center justify-around">
+              <a href="http://example.com">link</a>
+              <button className="w-10vw h-5vh">
+                Adopt Me!
+              </button>
+            </div>
           </div>
         </div>
+        <div id="next-page" className="fs-4em cursor" onClick={handleBack}>›</div>
       </div>
-      <div id="next-page" className="fs-4em cursor" onClick={handleBack}>›</div>
     </div>
   );
 }
